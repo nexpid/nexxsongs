@@ -1,0 +1,45 @@
+.bg_container {
+  scale: 290% 185%;
+}
+
+.bg_color,
+.bg_back,
+.bg_center {
+  position: absolute;
+  width: 100%;
+  scale: 200% 100%;
+  animation: rotate 35s linear infinite;
+  filter: blur(40px);
+  border-radius: 100em;
+}
+
+.bg_color {
+  right: 0;
+  top: 0;
+}
+
+.bg_back {
+  bottom: 0;
+  animation-direction: reverse;
+}
+
+.bg_center {
+  scale: 200% 100%;
+  right: -50%;
+  top: -20%;
+  animation-direction: reverse;
+}
+
+.transition {
+  transition: filter 0.35s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

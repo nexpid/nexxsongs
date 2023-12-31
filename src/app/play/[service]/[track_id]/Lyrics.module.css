@@ -1,0 +1,52 @@
+.vocal {
+  filter: blur(var(--l-blur));
+  transition: opacity 0.25s cubic-bezier(0.61, 1, 0.88, 1);
+  line-height: calc(var(--l-text-size) + 0.25rem);
+  --l-text-size: 3rem;
+}
+
+.vocal_sub {
+  --l-text-size: 1.875rem;
+}
+
+.vocal_group:hover .vocal {
+  --l-blur: 0px;
+  opacity: 1;
+}
+
+.lyric {
+  --l-gradient-angle: 180deg;
+}
+
+.syllable {
+  --l-gradient-angle: 90deg;
+}
+
+.lyric,
+.syllable {
+  transition: background-color 0.3s cubic-bezier(0.61, 1, 0.88, 1),
+    scale 0.1s cubic-bezier(0.37, 0, 0.63, 1);
+}
+
+.syllable:not(:is(.part-of-word)):after {
+  content: "";
+  margin-right: 0.3ch;
+}
+
+.vocal_active .syllable {
+  scale: var(--l-scale);
+  transform: translateY(calc(var(--l-text-size) * var(--l-y-offset)));
+}
+
+.vocal_active span {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  text-shadow: 0 0 var(--l-text-shadow-blur)
+    rgba(255, 255, 255, var(--l-text-shadow-opacity));
+  background-image: linear-gradient(
+    var(--l-gradient-angle),
+    rgba(255, 255, 255, 0.85) var(--l-gradient-progress),
+    rgba(255, 255, 255, 0.4) calc(var(--l-gradient-progress) + 20%)
+  );
+}

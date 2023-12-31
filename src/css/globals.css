@@ -1,0 +1,5 @@
+* {
+  outline: none !important;
+  transition-duration: 0.15s;
+  transition-property: background-color, color, border-color;
+}
